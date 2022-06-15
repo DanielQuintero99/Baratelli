@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import Home from './componentes/Home';
+import { useFonts } from 'expo-font';
+import { ActivityIndicator } from 'react-native';
+import tema from './componentes/constantes/tema';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    "Lato-Regular": require('./assets/fonts/Lato-Regular.ttf'),
+    "Lato-Bold": require('./assets/fonts/Lato-Bold.ttf'),
+  });
+  if (!fontsLoaded) {
+    return <ActivityIndicator size={large} color={tema.color.primary}/>;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <Home/>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
