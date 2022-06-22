@@ -110,6 +110,16 @@ const styles=StyleSheet.create({
         marginTop: 30,
         marginHorizontal: 15,
     },
+    loginButton:{
+        backgroundColor: "red",
+        borderRadius: 25,
+        alignItems: "center",
+        justifyContent: "center",
+        height: 60,
+    },
+    whiteText:{
+        color:'white'
+    }
 });
 
 export default styles;

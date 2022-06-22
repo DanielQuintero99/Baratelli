@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
-import { View,Text, FlatList, ScrollView } from 'react-native'
+import { View,Text, FlatList, TouchableOpacity} from 'react-native'
 import styles from '../styles';
 import ItemWrapper from './ItemWrapper'
 
-const Item = () => {
+const Item = ({navigation}) => {
     const [data, setData] = useState([
         {
             id:1,
@@ -64,6 +64,16 @@ const Item = () => {
                 <Text style={styles.cardText}>{item.precio}</Text>
                 <Text style={styles.cardText}>{item.imagen}</Text>
                 <Text style={styles.cardText}>{item.descripcion}</Text>
+                <TouchableOpacity onPress={()=>navigation.navigate('ItemDetail')}>
+                    <Text>
+                        Mas Detalles
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text>
+                        Ir a la tienda
+                    </Text>
+                </TouchableOpacity>
                 </View>
             </ItemWrapper>
         )

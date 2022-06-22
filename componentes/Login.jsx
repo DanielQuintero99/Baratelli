@@ -5,7 +5,9 @@ import CrearCuenta from './CrearCuenta';
 import IniciarSesion from './IniciarSesion';
 
 const imagen = require('../sources/logInBackground.jpg');
+
 export default function Login ({navigation}) {
+    
     const[showLogin,setShowLogin]=useState(false);
     const[showCreateAccount,setShowCreateAccount]=useState(false)
 

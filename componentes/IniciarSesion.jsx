@@ -1,14 +1,15 @@
 import React from 'react'
 import { Text, View,TouchableOpacity,TextInput} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import styles from '../styles';
 
 const IniciarSesion = ({navigation}) => {
   return (
     <View>
         <TextInput placeholder="Correo Electronico" />
         <TextInput placeholder="Contraseña" />
-        <TouchableOpacity onPress={()=>navigation.navigate('HomeScreen')}>
-            <Text>
+        <TouchableOpacity style={styles.loginButton} onPress={()=>navigation.navigate('HomeScreen')}>
+            <Text style={styles.whiteText}>
                 Iniciar Sesion
             </Text>
         </TouchableOpacity>

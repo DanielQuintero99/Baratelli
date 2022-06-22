@@ -1,11 +1,11 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Item from './Item';
 
-const Resultados = () => {
+const Resultados = ({navigation}) => {
     
   return (
     <>
-    <Item/>
+    <Item navigation={navigation}/>
     </>
     
   )
