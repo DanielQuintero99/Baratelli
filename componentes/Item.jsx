@@ -72,7 +72,7 @@ const Item = () => {
   return (
   
     <FlatList
-        tyle={styles.itemContainer}
+        style={styles.itemContainer}
         numColumns={numColumns}
         data={data}
         renderItem={renderItem}

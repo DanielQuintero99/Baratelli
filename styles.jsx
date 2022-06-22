@@ -1,5 +1,6 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import tema from "./componentes/constantes/tema";
+
 
 const styles=StyleSheet.create({
     wrapperContainer:{
@@ -35,7 +36,11 @@ const styles=StyleSheet.create({
         fontFamily:tema.fontFamily.secondary,
         color:tema.color.textColorPrimary,
     },
+    container:{
+        flex:1
+    },
     itemContainer:{
+        flex:1,
         marginTop:10,
         marginHorizontal:10,
     },
@@ -50,7 +55,7 @@ const styles=StyleSheet.create({
         alignItems: "center",
     },
     logWelcome: {
-        marginTop: 200,      
+        marginTop: 0,      
     },
     welcomeTitle: {
         fontFamily: tema.fontFamily.primary,
