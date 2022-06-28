@@ -56,6 +56,13 @@ const Item = ({navigation}) => {
         }
     ]);
         const numColumns = 2;
+        const oneItem=(item)=>{navigation.navigate('ItemDetail',{
+            id:item.id,
+            nombre:item.nombre,
+            precio:item.precio,
+            imagen:item.imagen,
+            descripcion:item.descripcion
+        })}
     const renderItem = ({item}) => {
         return(
             <ItemWrapper>
@@ -64,7 +71,7 @@ const Item = ({navigation}) => {
                 <Text style={styles.cardText}>{item.precio}</Text>
                 <Text style={styles.cardText}>{item.imagen}</Text>
                 <Text style={styles.cardText}>{item.descripcion}</Text>
-                <TouchableOpacity onPress={()=>navigation.navigate('ItemDetail')}>
+                <TouchableOpacity onPress={()=>oneItem(item)}>
                     <Text>
                         Mas Detalles
                     </Text>
