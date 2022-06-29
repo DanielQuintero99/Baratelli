@@ -1,14 +1,14 @@
 import React from 'react'
 import { View,Text, SafeAreaView } from 'react-native'
 import styles from '../styles'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import IonicIcons  from '@expo/vector-icons/Ionicons';
 
 const Header = ({user}) => {
   return (
     <SafeAreaView>
     <View style={styles.headerContainer} >
         <Text>Logo</Text>
-        <Icon name='bell' size={30} color="#000"></Icon>
+        <IonicIcons name="notifications-outline" size={24} color="black" />
     </View>
         <Text style={styles.headerText} >Bienvenido, {user}</Text>
     </SafeAreaView>

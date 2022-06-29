@@ -39,6 +39,18 @@ const styles=StyleSheet.create({
     container:{
         flex:1
     },
+    resultadosTittle:{
+        color: tema.color.textColorPrimary,
+        fontSize: tema.fontSize.xLarge,
+        fontFamily: tema.fontFamily.primary,
+        marginLeft: 15,
+        marginTop:15,
+    },
+    containerCenter:{
+        flex:1,
+        justifyContent:"center",
+        alignItems:"center"
+    },
     itemContainer:{
         flex:1,
         marginTop:10,
