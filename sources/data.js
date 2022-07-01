@@ -1,4 +1,4 @@
-export const resultados=[
+export const results=[
     {
         id:1,
         nombre:'Celular Samsung',

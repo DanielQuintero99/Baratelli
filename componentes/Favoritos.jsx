@@ -6,7 +6,11 @@ const Favoritos = () => {
   return (
     <View
     style={styles.containerCenter}
-    ><Text>Favoritos</Text></View>
+    >
+      <Text>
+        Favoritos
+      </Text>
+    </View>
   )
 }
 
