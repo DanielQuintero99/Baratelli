@@ -111,6 +111,12 @@ const styles=StyleSheet.create({
         fontFamily: tema.fontFamily.primary,
         marginLeft: 15,
     },
+    buscadorContainer:{
+        flexDirection:"row",
+    },
+    buscadorButton:{
+        marginTop:43
+    },
     buscador: {
         backgroundColor: "#F8F7FA",
         borderRadius: 25,

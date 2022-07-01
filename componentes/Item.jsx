@@ -1,13 +1,21 @@
-import React from 'react'
-import { View,Text, FlatList, TouchableOpacity} from 'react-native'
+import React,{useState} from 'react'
+import { View,Text, FlatList, TouchableOpacity,TextInput,Image} from 'react-native'
 import styles from '../styles';
 import ItemWrapper from './ItemWrapper'
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { resultadosEcontrados } from '../store/actions/result.actions'
+
 
 const Item = ({navigation}) => {
+    const dispatch= useDispatch()
+    let submitSearch=()=>{
+        dispatch(resultadosEcontrados)
+        setbusqueda(resultadosEcontrados.type)
+    }
         const resultados = useSelector(state=>state.resultados.results)
         const numColumns = 2;
-        console.warn(resultados)
+        const [busqueda, setbusqueda] = useState(resultados);
+
         const oneItem=(item)=>{navigation.navigate('ItemDetail',{
             id:item.id,
             nombre:item.nombre,
@@ -39,14 +47,19 @@ const Item = ({navigation}) => {
     }
 
   return (
-  
+    <>
+    <View style={styles.buscadorContainer}>
+        <TextInput style={styles.buscador} placeholder="Que buscas? (prueba con celular, por ahora)"></TextInput>
+        <TouchableOpacity style={styles.buscadorButton} onPress={submitSearch}><Image source={ require('../sources/lupa.png') } style={ { width: 25, height: 25 } } /></TouchableOpacity>
+    </View>
     <FlatList
         style={styles.itemContainer}
         numColumns={numColumns}
-        data={resultados}
+        data={busqueda}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
     />
+    </>
   )
 }
 
